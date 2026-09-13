@@ -1,12 +1,14 @@
 package it.fast4x.rimusic.ui.components.themed
 
 import androidx.annotation.OptIn
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.exoplayer.ExoPlayer
@@ -28,17 +30,14 @@ fun NowPlayingSongIndicator (
     Box(
         contentAlignment = Alignment.Center,
         modifier = Modifier
-//            .background(
-//                color = Color.Black.copy(alpha = 0.25f),
-//                shape = thumbnailShape()
-//            )
+            .background(Color.Black)
             .size(containerSize)
     ) {
-            MusicAnimation(
-                color = colorPalette().onOverlay,
-                modifier = Modifier
-                    .height(containerSize / 2)
-            )
+        MusicAnimation(
+            color = colorPalette().onOverlay,
+            modifier = Modifier
+                .height(containerSize / 2)
+        )
     }
 
 }
